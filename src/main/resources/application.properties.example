@@ -1,0 +1,11 @@
+
+# MySQL
+db.username=tobi
+db.password=tobi
+db.host=deepthought
+db.port=3306
+db.schema=tobi
+
+
+# nameapi key
+nameapi.key=f211baf81dd2c17c3f8ad3e5c7e24216-user1
