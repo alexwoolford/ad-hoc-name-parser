@@ -23,8 +23,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
-import javax.annotation.PostConstruct;
-
 @Component
 public class NameCleaner {
 
@@ -36,10 +34,10 @@ public class NameCleaner {
     @Autowired
     DbMapper dbMapper;
 
-    @PostConstruct
+//    @PostConstruct // disabled because we have already parsed all the names
     private void cleanNames() throws Exception {
 
-        for (LinkedinPersonRecord linkedinPersonRecord : dbMapper.getLinkedinPersonRecords()){
+        for (LinkedinPersonRecord linkedinPersonRecord : dbMapper.getLinkedinPersonNoFirstnameRecords()){
             updateName(linkedinPersonRecord.getName());
         }
 
